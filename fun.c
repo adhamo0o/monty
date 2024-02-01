@@ -50,7 +50,7 @@ void pchar(stack_t **stack, unsigned int line_number, char *value)
 }
 /**
  * pstr - Prints the string starting at the top of the stack,
- * 	  followed by a new line.
+ * followed by a new line.
  * @stack: Double pointer to the stack
  * @line_number: Line number in the file
  * @value: Unused parameter

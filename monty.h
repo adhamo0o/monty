@@ -7,7 +7,6 @@
 #include <string.h>
 #include <ctype.h>
 
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -19,10 +18,11 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -33,13 +33,11 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number, char *value);
 } instruction_t;
 
-
-
-
+/* error messsages*/
 #define ERR_USAGE "USAGE: monty file\n"
 #define ERR_OPEN "Error: Can't open file %s\n"
 #define ERR_MALLOC "Error: malloc failed\n"
@@ -88,6 +86,4 @@ void pchar(stack_t **stack, unsigned int line_number, char *value);
 void pstr(stack_t **stack, unsigned int line_number, char *value);
 void rotl(stack_t **stack, unsigned int line_number, char *value);
 void rotr(stack_t **stack, unsigned int line_number, char *value);
-
-
 #endif
